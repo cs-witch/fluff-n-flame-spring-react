@@ -1,5 +1,6 @@
 package com.launchacademy.fluffandflame.controllers.api.v1;
 
+import com.launchacademy.fluffandflame.models.CreatureType;
 import com.launchacademy.fluffandflame.repositories.CreatureTypeRepository;
 import java.util.List;
 import lombok.NoArgsConstructor;
@@ -8,12 +9,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CreatureTypeController {
+public class CreatureTypeApiController {
 
   @Autowired
   private CreatureTypeRepository creatureTypeRepo;
@@ -34,8 +36,8 @@ public class CreatureTypeController {
     }
   }
 
-  @GetMapping("/api/v1/creatures")
-  public List getCreatureTypes() {
+  @GetMapping("/api/v1/all/types")
+  public Iterable<CreatureType> getCreatureTypes() {
     return creatureTypeRepo.findAll();
   }
 }
