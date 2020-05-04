@@ -9,7 +9,7 @@ const CreatureTypeShowpage = props => {
   let currentCreature = props.match.params.type;
   let currentCreatureId = Number(props.match.params.id);
 
-  const apiEndpoint = `/api/v1/adoptable/${currentCreature}/${currentCreatureId}`;
+  const apiEndpoint = `/api/v1/creatures/${currentCreature}/${currentCreatureId}`;
   const fetchCreature = () => fetchData(apiEndpoint, setCreature);
 
   useEffect(fetchCreature, {});

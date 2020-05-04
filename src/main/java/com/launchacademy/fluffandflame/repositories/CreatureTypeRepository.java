@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CreatureTypeRepository extends PagingAndSortingRepository<CreatureType, Integer > {
 
-  CreatureType findByType(String nyan_cat);
+  CreatureType findByType(String type);
 }

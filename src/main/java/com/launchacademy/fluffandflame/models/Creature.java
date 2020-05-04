@@ -53,13 +53,11 @@ public class Creature {
   @Column(name = "adoption_status")
   private String adoptionStatus;
 
-//  @ManyToOne
-//  @JoinColumn(name = "type_id")
-//  CreatureType creatureType;
   @NotNull
   @ManyToOne
   @JoinColumn(name = "type_id")
   private CreatureType creatureType;
-    @Column(name = "type_id", nullable = false, insertable = false, updatable = false)
-    private Integer typeId;
+
+  @Column(name = "type_id", nullable = false, insertable = false, updatable = false)
+  private Integer typeId;
 }

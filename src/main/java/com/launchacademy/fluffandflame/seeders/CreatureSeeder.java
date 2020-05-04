@@ -31,7 +31,7 @@ public class CreatureSeeder {
       nyanCat.setAge(17);
       nyanCat.setVaccinationStatus(false);
       nyanCat.setAdoptionStory("A Nyan cat in the shape of a taco. Yummmmmmm.");
-      nyanCat.setAdoptionStatus("Available");
+      nyanCat.setAdoptionStatus("available");
       nyanCat.setCreatureType(typeNyanCat);
       nyanCat.setTypeId(nyanCat.getId());
       creatureList.add(nyanCat);

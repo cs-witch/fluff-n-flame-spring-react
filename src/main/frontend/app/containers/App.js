@@ -29,11 +29,7 @@ const App = props => {
             <Route exact path="/adoptions/new" component={NewCreature} />
             <Route exact path="/creatures" component={IndexTypes} />
             <Route exact path="/creatures/:type" component={IndexCreature} />
-            <Route
-              exact
-              path="/creatures/:type/:id"
-              component={CreatureTypeShowpage}
-            />
+            <Route exact path="/creatures/:type/:id" component={CreatureTypeShowpage} />
             <Route exact path="/pending_applications" component={UserMain} />
             <Route exact path="/pending_applications/edit/:id" component={UserAdoptReqEdit} />
 

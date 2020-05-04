@@ -8,7 +8,7 @@ const CardAdopted = props => {
         <h3>{props.creatures.name}</h3>
         <img
           className="img-radix2us"
-          src={props.creatures.creatureImg}
+          src={props.creatures.imgUrl}
           alt={props.creatures.name}
         />
         <p className="lead">{props.creatures.adoptionStory}</p>
