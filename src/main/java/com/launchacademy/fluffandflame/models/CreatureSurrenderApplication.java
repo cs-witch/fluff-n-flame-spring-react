@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
@@ -13,12 +15,13 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.URL;
 
 @Data
 @NoArgsConstructor
 @Entity
 @Table(name = "creature_surrender_applications")
-public class CreatureSurrenderApplications {
+public class CreatureSurrenderApplication {
 
   @Id
   @SequenceGenerator(name="creature_surrender_applications_generator", sequenceName="creature_surrender_applications_id_seq", allocationSize = 1)
@@ -46,13 +49,15 @@ public class CreatureSurrenderApplications {
   @Column(name="creature_age")
   private Integer creatureAge;
 
+  @ManyToOne
   @NotNull
-  @Column(name="creature_type_id")
-  private Integer creatureTypeId;
+  @JoinColumn (name="creature_type_id")
+  private CreatureType creatureType;
 
   @NotBlank
+  @URL
   @Column(name="creature_image_url")
-  private String creatureImg;
+  private String creatureImgUrl;
 
   @Column(name="vaccination_status")
   private boolean vaccinationStatus;

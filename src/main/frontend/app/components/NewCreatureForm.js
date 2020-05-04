@@ -8,10 +8,10 @@ const NewCreatureForm = props => {
     name: "",
     phoneNumber: "",
     email: "",
-    petName: "",
-    petAge: "",
-    petType: "",
-    petImageUrl: "",
+    creatureName: "",
+    creatureAge: "",
+    creatureType: "",
+    creatureImgUrl: "",
     vaccinationStatus: ""
   };
 
@@ -19,7 +19,7 @@ const NewCreatureForm = props => {
   const [errors, setErrors] = useState({});
 
   const [creatureTypes, setCreatureTypes] = useState([]);
-  const apiEndpoint = "/api/v1/all/types";
+  const apiEndpoint = "/api/v1/creatures";
   const fetchCreatureTypes = () => fetchData(apiEndpoint, setCreatureTypes);
   useEffect(fetchCreatureTypes, []);
   let listTypes = <option>LOADING...</option>;
@@ -46,7 +46,7 @@ const NewCreatureForm = props => {
     event.preventDefault();
     if (
       validateForm(
-        ["name", "phoneNumber", "email", "petName", "petAge", "petImageUrl"],
+        ["name", "phoneNumber", "email", "creatureName", "creatureAge", "creatureImgUrl"],
         formState,
         setErrors
       )
@@ -55,13 +55,13 @@ const NewCreatureForm = props => {
         name: formState.name,
         phoneNumber: formState.phoneNumber,
         email: formState.email,
-        petName: formState.petName,
-        petAge: formState.petAge,
-        petImageUrl: formState.petImageUrl,
+        creatureName: formState.creatureName,
+        creatureAge: formState.creatureAge,
+        creatureImgUrl: formState.creatureImgUrl,
         vaccinationStatus: formState.vaccinationStatus,
         applicationStatus: "pending",
         creatureType: {
-          ...creatureTypes.find(eachType => eachType.type === formState.petType)
+          ...creatureTypes.find(eachType => eachType.type === formState.creatureType)
         }
       };
       props.addNewCreature(convertPayload);
@@ -99,25 +99,25 @@ const NewCreatureForm = props => {
       />
       <label>Pet Name*:</label>
       <input
-        name="petName"
-        id="petName"
+        name="creatureName"
+        id="creatureName"
         type="text"
-        value={formState.petName}
+        value={formState.creatureName}
         onChange={handleChange}
       />
       <label>Pet Age*:</label>
       <input
-        name="petAge"
-        id="petAge"
+        name="creatureAge"
+        id="creatureAge"
         type="number"
-        value={formState.petAge}
+        value={formState.creatureAge}
         onChange={handleChange}
       />
       <label>Pet Type*:</label>
       <select
-        name="petType"
-        id="petType"
-        value={formState.petType}
+        name="creatureType"
+        id="creatureType"
+        value={formState.creatureType}
         onChange={handleChange}
         required
       >
@@ -128,10 +128,10 @@ const NewCreatureForm = props => {
       </select>
       <label>Pet Image URL*:</label>
       <input
-        name="petImageUrl"
-        id="petImageUrl"
+        name="creatureImgUrl"
+        id="creatureImgUrl"
         type="text"
-        value={formState.petImageUrl}
+        value={formState.creatureImgUrl}
         onChange={handleChange}
       />
       <label>Vaccination Status*:</label>

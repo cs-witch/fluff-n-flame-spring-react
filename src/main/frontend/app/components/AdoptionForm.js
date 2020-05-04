@@ -4,7 +4,7 @@ import validateForm from "../functions/validateForm";
 import postData from "../functions/postData";
 
 const AdoptionForm = props => {
-  const postAPIpath = "/api/v1/adoption/application/new";
+  const postAPIpath = "/api/v1/adoption/new";
   const defaultApplicant = {
     name: "",
     phoneNumber: "",
