@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, BrowserRouter, Link } from "react-router-dom";
+import { Route, Switch, BrowserRouter, Link, Redirect } from "react-router-dom";
 import IndexTypes from "./IndexTypes";
 import IndexCreature from "./IndexCreature";
 import CreatureTypeShowpage from "../components/CreatureTypeShowpage";
@@ -12,6 +12,7 @@ import UserMain from "./UserMain";
 import UserAdoptReqEdit from "../components/UserAdoptReqEdit"
 
 const App = props => {
+
   return (
     <BrowserRouter>
       <div className="">
@@ -22,6 +23,7 @@ const App = props => {
           <Navigation />
         </nav>
         <div className="row medium-10 columns">
+          <Redirect from={'/'} to={'/creatures'}/>
           <Switch>
             <Route exact path="/" component={IndexTypes} />
             <Route exact path="/admin" component={AdminMain} />
@@ -29,14 +31,9 @@ const App = props => {
             <Route exact path="/adoptions/new" component={NewCreature} />
             <Route exact path="/creatures" component={IndexTypes} />
             <Route exact path="/creatures/:type" component={IndexCreature} />
-            <Route
-              exact
-              path="/creatures/:type/:id"
-              component={CreatureTypeShowpage}
-            />
+            <Route exact path="/creatures/:type/:id" component={CreatureTypeShowpage} />
             <Route exact path="/pending_applications" component={UserMain} />
             <Route exact path="/pending_applications/edit/:id" component={UserAdoptReqEdit} />
-
           </Switch>
         </div>
         <Footer />

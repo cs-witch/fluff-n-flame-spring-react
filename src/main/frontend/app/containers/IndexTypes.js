@@ -5,7 +5,7 @@ import CardType from "../components/CardType";
 const IndexTypes = props => {
   const [creatureTypes, setCreatureTypes] = useState([]);
 
-  const apiEndpoint = "/api/v1/all/types";
+  const apiEndpoint = "/api/v1/creatures";
   const fetchCreatureTypes = () => fetchData(apiEndpoint, setCreatureTypes);
   useEffect(fetchCreatureTypes, []);
 
@@ -21,7 +21,7 @@ const IndexTypes = props => {
       />
     ));
   }
-
+  
   return (
     <Fragment>
       <h2 className="text-center">

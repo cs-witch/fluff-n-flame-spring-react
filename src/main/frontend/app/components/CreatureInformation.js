@@ -12,7 +12,7 @@ const CreatureInformation = props => {
   return (
     <div className="text-center">
       <h2>{props.creature.name}</h2>
-      <img className="img-tweaks" src={props.creature.creatureImg} />
+      <img className="img-tweaks" src={props.creature.imgUrl} />
       <p className="lead bold-me">
         {props.creature.name} is {props.creature.age} years old and is{" "}
         {vaccination}.
