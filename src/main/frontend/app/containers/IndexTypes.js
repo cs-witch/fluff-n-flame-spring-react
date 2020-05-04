@@ -21,7 +21,7 @@ const IndexTypes = props => {
       />
     ));
   }
-
+  
   return (
     <Fragment>
       <h2 className="text-center">

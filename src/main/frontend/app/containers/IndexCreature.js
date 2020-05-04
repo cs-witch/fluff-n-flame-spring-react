@@ -16,7 +16,7 @@ const IndexCreature = props => {
   const mapCreatures = available.map(creature => (
     <AllCreaturesTile
       key={creature.id}
-      imgUrl={creature.imgUrl}
+      imgUrl={creature.creatureImg}
       name={creature.name}
       age={creature.age}
       vacStatus={creature.vaccinationStatus}
