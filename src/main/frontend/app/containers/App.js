@@ -23,7 +23,6 @@ const App = props => {
           <Navigation />
         </nav>
         <div className="row medium-10 columns">
-          <Redirect from={'/'} to={'/creatures'}/>
           <Switch>
             <Route exact path="/" component={IndexTypes} />
             <Route exact path="/admin" component={AdminMain} />
@@ -35,6 +34,7 @@ const App = props => {
             <Route exact path="/pending_applications" component={UserMain} />
             <Route exact path="/pending_applications/edit/:id" component={UserAdoptReqEdit} />
           </Switch>
+          <Redirect from={'/'} to={'/creatures'}/>
         </div>
         <Footer />
       </div>
